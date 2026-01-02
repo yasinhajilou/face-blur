@@ -14,7 +14,6 @@ In an era of mass surveillance, protecting the identity of protesters, activists
 
 ### Key Features
 
-- **🎯 99%+ Accuracy**: 5 detection methods running in parallel (OpenCV DNN, MediaPipe, YuNet, Haar Cascades, Profile Detection)
 - **🔒 Privacy-First**: When in doubt, blur — designed to never miss a face
 - **👓 Handles Difficult Cases**: Sunglasses, partial faces, profiles, looking down
 - **🎬 Quality Preservation**: Maintains original resolution, framerate, and audio
