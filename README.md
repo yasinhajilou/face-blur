@@ -23,6 +23,16 @@ In an era of mass surveillance, protecting the identity of protesters, activists
 
 ---
 
+## 📸 Sample Results
+
+| Before | After |
+|--------|-------|
+| ![Before](samples/before.png) | ![After](samples/after.png) |
+
+*All faces automatically detected and blurred — including those with sunglasses and looking away.*
+
+---
+
 ## 🖼️ How It Works
 
 ```
