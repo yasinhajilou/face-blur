@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Blur - Automatic Face Blurring for Videos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🔒</span>
+                <h1>Face Blur</h1>
+            </div>
+            <p class="tagline">Automatically blur faces in your videos for privacy</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Upload Section -->
+            <section id="upload-section" class="section upload-section">
+                <div class="upload-zone" id="upload-zone">
+                    <div class="upload-content">
+                        <div class="upload-icon">📁</div>
+                        <h2>Drop your video here</h2>
+                        <p>or click to browse</p>
+                        <p class="file-info">Supported: MP4, MOV, AVI • Max 5 minutes • Max 500MB</p>
+                    </div>
+                    <input type="file" id="file-input" accept=".mp4,.mov,.avi,video/mp4,video/quicktime,video/x-msvideo" hidden>
+                </div>
+
+                <!-- Selected File Info -->
+                <div id="file-preview" class="file-preview hidden">
+                    <div class="file-preview-content">
+                        <span class="file-icon">🎬</span>
+                        <div class="file-details">
+                            <span class="file-name" id="file-name">video.mp4</span>
+                            <span class="file-size" id="file-size">0 MB</span>
+                        </div>
+                        <button class="btn-remove" id="btn-remove" title="Remove file">✕</button>
+                    </div>
+                </div>
+
+                <!-- Upload Button -->
+                <button id="btn-upload" class="btn btn-primary hidden">
+                    <span class="btn-icon">🚀</span>
+                    Start Processing
+                </button>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress-section" class="section progress-section hidden">
+                <div class="progress-content">
+                    <div class="progress-header">
+                        <h2>Processing your video...</h2>
+                        <p id="progress-status">Uploading</p>
+                    </div>
+                    
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-percentage" id="progress-percentage">0%</span>
+                    </div>
+
+                    <div class="progress-info">
+                        <p id="progress-detail">Please wait while we detect and blur faces in your video...</p>
+                    </div>
+
+                    <!-- Cancel Button -->
+                    <button id="btn-cancel" class="btn btn-secondary">
+                        Cancel
+                    </button>
+                </div>
+            </section>
+
+            <!-- Complete Section -->
+            <section id="complete-section" class="section complete-section hidden">
+                <div class="complete-content">
+                    <div class="complete-icon">✅</div>
+                    <h2>Processing Complete!</h2>
+                    <p>All faces have been blurred in your video.</p>
+                    
+                    <div class="download-actions">
+                        <button id="btn-download" class="btn btn-primary btn-large">
+                            <span class="btn-icon">⬇️</span>
+                            Download Video
+                        </button>
+                    </div>
+
+                    <button id="btn-new" class="btn btn-secondary">
+                        Process Another Video
+                    </button>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section id="error-section" class="section error-section hidden">
+                <div class="error-content">
+                    <div class="error-icon">❌</div>
+                    <h2>Something went wrong</h2>
+                    <p id="error-message">An error occurred while processing your video.</p>
+                    
+                    <button id="btn-retry" class="btn btn-primary">
+                        Try Again
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>
+                    <strong>Privacy First:</strong> Your video is processed on our server and automatically deleted after download.
+                </p>
+                <p class="footer-links">
+                    <a href="https://github.com/yourusername/face-blur" target="_blank">GitHub</a>
+                    <span>•</span>
+                    <span>Open Source (MIT License)</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

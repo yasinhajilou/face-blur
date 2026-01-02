@@ -1,0 +1,31 @@
+[Unit]
+Description=Face Blur API
+Documentation=https://github.com/yourusername/face-blur
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/face-blur-app
+Environment="PATH=/home/ubuntu/face-blur-app/venv/bin"
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/home/ubuntu/face-blur-app/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 2
+Restart=always
+RestartSec=10
+
+# Resource limits
+LimitNOFILE=65535
+LimitNPROC=4096
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=false
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=faceblur
+
+[Install]
+WantedBy=multi-user.target

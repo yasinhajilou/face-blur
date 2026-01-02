@@ -1,0 +1,25 @@
+# Face Blur API - Python Dependencies
+# For Oracle Cloud ARM deployment
+
+# Web Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Async file operations
+aiofiles>=23.2.1
+
+# File upload handling
+python-multipart>=0.0.6
+
+# Face Detection - MediaPipe for multi-angle detection
+mediapipe>=0.10.9
+
+# Image/Video Processing
+opencv-python-headless>=4.9.0
+numpy>=1.24.0
+
+# ONNX Runtime for YuNet model (optional, falls back gracefully)
+# onnxruntime>=1.16.0
+
+# Optional: For better performance monitoring
+# prometheus-client==0.19.0
